@@ -1,0 +1,110 @@
+
+body{
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 95vh;
+
+    place-items: center;
+}
+
+@keyframes animate {
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+.main{
+    position: absolute;
+    background: rgb(28, 70, 112);
+
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    
+    color: #fff;
+
+    transition: 0.4s;
+}
+.main:hover{
+    filter: drop-shadow(16px 16px 10px black);
+
+}
+.title-project a{
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(135deg,#29186d, #ffc35c,#ff00e0);
+    padding: 5px;
+    border-radius: 5px;
+    filter: drop-shadow(5px 5px 10px rgb(0, 0, 0));
+    
+}
+
+.title-project p{
+    border-bottom: 1px solid silver;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    font-size: 18px;
+}
+
+.game-main{
+    text-align: center;
+    background: rgb(100, 124, 170);
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+.instument-game form{
+    display: flex;
+    flex-direction: column;
+
+}
+.instument-game form input{
+    border: 1px solid black;
+    font-size: 20px;
+    margin: 0px 10px;
+    margin-top: 10px;
+
+}
+
+.instument-game form button{
+    color: #fff;
+    border: 1px solid #fff;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    z-index: 20;
+}
+.instument-game form button::before{
+    content: "";
+    background: linear-gradient(135deg,#29186d, #ffc35c,#ff00e0);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0%;
+    z-index: -10;
+    border-radius: 50% 50% 0 0;
+    transition: 0.8s;
+    animation: animate 1.5s linear infinite;
+}
+
+.instument-game form button:hover::before{
+    height: 200%;
+}
+
+.stat p{
+    background: #283c48;
+    padding: 10px;
+    transition: 0.4s;
+    filter: drop-shadow(16px 16px 50px black);
+}
