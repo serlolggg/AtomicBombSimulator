@@ -1,7 +1,7 @@
 @import url(font/Josefin_Sans.zip);
 body{
     overflow: hidden;
-    overflow-y: scroll;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,6 +140,7 @@ span{
     margin-top: 10px;
     border: 1px solid silver;
     border-radius: 10px;
+    overflow-y: scroll;
 }
 
 .reset{
@@ -173,4 +174,40 @@ span{
 
 .reset:hover::before{
     height: 200%;
+}
+
+@media (max-width: 950px)  {
+    body{
+        background: #000;
+        padding: 10px;
+        display: flex;
+        overflow: hidden;
+        overflow-y: scroll;
+
+    }
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        font-size: 14px;
+        height: 90px;
+        padding: 5px;
+    }
+
+    .main{
+        margin-top: 240px;
+        overflow-y: scroll;
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .title-project{
+        padding: 10px;
+    }
 }

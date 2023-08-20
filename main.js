@@ -62,13 +62,44 @@ class City{
         this.population = population
     }
 
+
+
     atomicBomb(){
+
+        const optionBomb = document.querySelector('.option-bomb')
+        let onePopulation
+        let twoPopulation 
+        if(optionBomb.value == 'bomb1'){
+            console.log('bum1')
+            onePopulation =  Math.round(this.population * 0.73)
+            twoPopulation = this.population - Math.round(this.population * 0.73)
+        }
+        if(optionBomb.value == 'bomb2'){
+            console.log('bum2')
+            onePopulation =  Math.round(this.population * 0.65)
+            twoPopulation = this.population - Math.round(this.population * 0.65)
+        }
+        if(optionBomb.value == 'bomb3'){
+            console.log('bum3')
+            onePopulation =  Math.round(this.population * 0.21)
+            twoPopulation = this.population - Math.round(this.population * 0.21)
+        }
+        if(optionBomb.value == 'bomb4'){
+            console.log('bum4')
+            onePopulation =  Math.round(this.population * 0.11)
+            twoPopulation = this.population - Math.round(this.population * 0.11)
+        }
+        if(optionBomb.value == 'bomb5'){
+            console.log('bum5')
+            onePopulation =  Math.round(this.population * 0.003)
+            twoPopulation = this.population - Math.round(this.population * 0.003)
+        }
 
         const html = `<p class="result">
 Ви скинули атомну бомбу на ${this.nameCity}.
 кількість населення до бомби: ${this.population}
-населення після бомби: ${Math.round(this.population * 0.23)}.
-кількість загиблих: ${this.population - Math.round(this.population * 0.23)}
+населення після бомби: ${onePopulation}.
+кількість загиблих: ${twoPopulation}
 </p>`
 
 
