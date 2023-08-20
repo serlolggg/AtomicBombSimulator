@@ -94,9 +94,10 @@ form.onsubmit = function(e){
     }
 
     e.preventDefault();
-
     console.log(inputCity.value, inputPopul.value)
     const moscow = new City(inputCity.value, inputPopul.value)
+
+    console.log(moscow.atomicBomb())
 
 }
 
@@ -107,6 +108,4 @@ reset.onclick = () =>{
 
     inputCity.value = ''
     inputPopul.value = ''
-    const body = document.querySelector('body')
-    body.style.background = 'black'
 }
