@@ -1,7 +1,7 @@
-
+@import url(font/Josefin_Sans.zip);
 body{
     overflow: hidden;
-
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,6 +10,8 @@ body{
     height: 95vh;
 
     place-items: center;
+    transition: 0.8s;
+
 }
 
 @keyframes animate {
@@ -17,8 +19,30 @@ body{
         filter: hue-rotate(360deg);
     }
 }
+header{
+    background: linear-gradient(135deg,#432ca0, #885b0e,#ff00e0);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
 
+}
+span{
+    content: "";
+    background: linear-gradient(135deg,#29186d, #ffc35c,#ff00e0);
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: 5px;
+    top: 100px;
+    left: 0;
+    animation: animate 1.5s linear infinite;
+}
 .main{
+    margin-top: 70px;
     position: absolute;
     background: rgb(28, 70, 112);
 
@@ -41,7 +65,7 @@ body{
     padding: 5px;
     border-radius: 5px;
     filter: drop-shadow(5px 5px 10px rgb(0, 0, 0));
-    
+    font-family: 'Montserrat', sans-serif;
 }
 
 .title-project p{
@@ -61,18 +85,19 @@ body{
 .instument-game form{
     display: flex;
     flex-direction: column;
-
+    position: relative;
 }
 .instument-game form input{
-    border: 1px solid black;
+    border: 1px solid silver;
     font-size: 20px;
     margin: 0px 10px;
     margin-top: 10px;
+    border-radius: 10px;
 
 }
 
-.instument-game form button{
-    color: #fff;
+.instument-game form .send{
+    color: #fffffffd;
     border: 1px solid #fff;
     margin-top: 10px;
     padding: 10px;
@@ -84,7 +109,7 @@ body{
     transition: 0.4s;
     z-index: 20;
 }
-.instument-game form button::before{
+.instument-game form .send::before{
     content: "";
     background: linear-gradient(135deg,#29186d, #ffc35c,#ff00e0);
     width: 100%;
@@ -98,7 +123,7 @@ body{
     animation: animate 1.5s linear infinite;
 }
 
-.instument-game form button:hover::before{
+.instument-game form .send:hover::before{
     height: 200%;
 }
 
@@ -107,4 +132,45 @@ body{
     padding: 10px;
     transition: 0.4s;
     filter: drop-shadow(16px 16px 50px black);
+}
+
+.option-bomb{
+    font-size: 20px;
+    margin: 0px 10px;
+    margin-top: 10px;
+    border: 1px solid silver;
+    border-radius: 10px;
+}
+
+.reset{
+
+    width: 100px;
+    color: #000000fd;
+    border: 1px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    z-index: 20;
+}
+
+.reset::before{
+    content: "";
+    background: linear-gradient(135deg,#6d1818, #fc5cff,#d0ff00);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0%;
+    z-index: -10;
+    border-radius: 50% 50% 0 0;
+    transition: 0.8s;
+    animation: animate 1.5s linear infinite;
+}
+
+.reset:hover::before{
+    height: 200%;
 }

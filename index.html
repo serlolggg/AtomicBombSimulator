@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <header>
+        <h1>ATOMIC BOMB SIMULATOR</h1>
+        
+        <div class="funct-panel">
+
+        </div>
+        <span></span>
+    </header>
+    
     <div class="main">
         <div class="title-project">
             <a href="index.html">ATOMIC BOMB SIMULATOR</a>
@@ -27,8 +37,11 @@
         </div>
 
         <div class="game-main">
+
             <div class="stat">
+                <button class="reset">Reset</button>
                 <h2>Дані</h2>
+                
             </div>
 
             <div class="instument-game">
@@ -36,8 +49,17 @@
                     <input type="text" placeholder="Ведіть назву міста" class="city-input">
                     <input type="number" placeholder="Ведіть кількість населення" class="popul-input">
 
-                    <button>Відправити</button>
+                    <select class="option-bomb">
+                        <option value="" class="bomb1">Бомба 1</option>
+                        <option value="" class="bomb2">Бомба 2</option>
+                        <option value="" class="bomb3">Бомба 3</option>
+                        <option value="" class="bomb4">Бомба 4</option>
+                        <option value="" class="bomb5">Бомба 5</option>
+                    </select>
+                    <button class="send">Відправити</button>
+                    
                 </form>
+                
             </div>
         </div>
     </div>

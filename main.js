@@ -67,8 +67,8 @@ class City{
         const html = `<p class="result">
 Ви скинули атомну бомбу на ${this.nameCity}.
 кількість населення до бомби: ${this.population}
-населення після бомби: ${Math.round(this.population * 0.023)}.
-кількість загиблих: ${this.population - Math.round(this.population * 0.023)}
+населення після бомби: ${Math.round(this.population * 0.23)}.
+кількість загиблих: ${this.population - Math.round(this.population * 0.23)}
 </p>`
 
 
@@ -80,6 +80,8 @@ class City{
 населення після бомби: ${Math.round(this.population * 0.023)}.
 кількість загиблих: ${this.population - Math.round(this.population * 0.023)}`)
     }
+
+
 
 }
 
@@ -95,6 +97,16 @@ form.onsubmit = function(e){
 
     console.log(inputCity.value, inputPopul.value)
     const moscow = new City(inputCity.value, inputPopul.value)
-    console.log(moscow.atomicBomb())
 
+}
+
+const reset = document.querySelector('.reset')
+
+reset.onclick = () =>{
+    console.log('click')
+
+    inputCity.value = ''
+    inputPopul.value = ''
+    const body = document.querySelector('body')
+    body.style.background = 'black'
 }
