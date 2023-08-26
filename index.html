@@ -1,39 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATOMIC BOMB SIMULATOR</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header>
         <h1>ATOMIC BOMB SIMULATOR</h1>
-        
+
         <div class="funct-panel">
 
         </div>
         <span></span>
     </header>
-    
+
     <div class="main">
         <div class="title-project">
-            <a href="index.html">ATOMIC BOMB SIMULATOR</a>
-            <p>
-                ATOMIC BOMB SIMULATOR є унікальною грою,
-                 яка дозволяє вам створювати та запускати
-                 атомні бомби на різних місцях світу. 
-                 Ви можете вибирати тип бомби, потужність, 
-                 висоту вибуху, погодні умови та інші параметри, 
-                 щоб побачити ефекти ядерного вибуху на людей, 
-                 будівлі та навколишнє середовище. Гра має реалістичну 
-                 графіку, фізику та звук, а також історичні сценарії, 
-                 які демонструють реальні ядерні атаки в минулому. 
-                 ATOMIC BOMB SIMULATOR - це не лише захоплююча гра, 
-                 а й освітній проект, який показує наслідки ядерної 
-                 зброї та сприяє миротворчості та роззброєнню.
-            </p>
+            <div class="panel-exit">
+                <a href="index.html">ATOMIC BOMB SIMULATOR</a>
+                <button class="exit">X</button>
+            </div>
         </div>
 
         <div class="game-main">
@@ -41,28 +32,47 @@
             <div class="stat">
                 <button class="reset">Reset</button>
                 <h2>Дані</h2>
-                
             </div>
 
             <div class="instument-game">
                 <form>
-                    <input type="text" placeholder="Ведіть назву міста" class="city-input">
-                    <input type="number" placeholder="Ведіть кількість населення" class="popul-input">
 
-                    <select class="option-bomb">
+                    <select class="option-city option">
+                        <option value="Moskov">Москва(13млн)</option>
+                        <option value="Berlin">Берлін(3млн)</option>
+                    </select>
+                    <select class="option-bomb option">
                         <option value="bomb1">«Малюк» (15 кілотон)</option>
                         <option value="bomb2">«Товстун» (21 кілотон)</option>
                         <option value="bomb3">«Mk.18» (500 кілотон)</option>
                         <option value="bomb4">«B83» (1,2 мегатонни) </option>
                         <option value="bomb5">«Цар-бомба»(58,6 мегатонни)</option>
                     </select>
-                    <button class="send">Відправити</button>
-                    
+                    <button class="send">Start</button>
+
                 </form>
-                
+
             </div>
+        </div>
+    </div>
+
+    <button class="btnStartGame">
+        StartGame
+    </button>
+
+
+
+
+    <div class="result-div">
+        <button class="exit-result">
+            X
+        </button>
+        <h2>RESULT</h2>
+
+        <div class="result-title">
         </div>
     </div>
     <script src="main.js"></script>
 </body>
+
 </html>

@@ -2,12 +2,11 @@
 body{
     overflow: hidden;
 
-    display: flex;
-    flex-direction: column;
+    display:flex;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
 
-    height: 95vh;
 
     place-items: center;
     transition: 0.8s;
@@ -19,6 +18,7 @@ body{
         filter: hue-rotate(360deg);
     }
 }
+
 header{
     background: linear-gradient(135deg,#432ca0, #885b0e,#ff00e0);
     width: 100%;
@@ -42,20 +42,32 @@ span{
     animation: animate 1.5s linear infinite;
 }
 .main{
-    margin-top: 70px;
-    position: absolute;
+    overflow: hidden;
     background: rgb(28, 70, 112);
-
-    width: 50%;
+    width: 100%;;
     padding: 10px;
     border-radius: 10px;
-    
+    height: 100vh;
+    position: relative;
     color: #fff;
 
     transition: 0.4s;
+    z-index: 10;
+
+    margin-left: 4000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .main:hover{
     filter: drop-shadow(16px 16px 10px black);
+
+}
+.title-project{
+    position: relative;
+
+    margin-bottom: 30px;
+    width: 100%;
 
 }
 .title-project a{
@@ -81,6 +93,7 @@ span{
     padding: 5px;
     border-radius: 15px;
     font-size: 20px;
+    width: 50%;
 }
 .instument-game form{
     display: flex;
@@ -97,30 +110,37 @@ span{
 }
 
 .instument-game form .send{
+    height: 100px;
     color: #fffffffd;
     border: 1px solid #fff;
     margin-top: 10px;
     padding: 10px;
-    border-radius: 10px;
-    font-size: 20px;
-    display: block;
+    border-radius: 50px;
+    display: flex;
     position: relative;
     overflow: hidden;
     transition: 0.4s;
     z-index: 20;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    font-size: 30px;
+    
 }
 .instument-game form .send::before{
     content: "";
-    background: linear-gradient(135deg,#29186d, #ffc35c,#ff00e0);
+    background: linear-gradient(135deg,#6d1849, #df0d0d,#ff00e0);
     width: 100%;
+    height: 100px;
+
+    
     position: absolute;
     left: 0;
     bottom: 0;
     height: 0%;
     z-index: -10;
     border-radius: 50% 50% 0 0;
-    transition: 0.8s;
-    animation: animate 1.5s linear infinite;
+    transition: 1s;
 }
 
 .instument-game form .send:hover::before{
@@ -134,7 +154,7 @@ span{
     filter: drop-shadow(16px 16px 50px black);
 }
 
-.option-bomb{
+.option{
     font-size: 20px;
     margin: 0px 10px;
     margin-top: 10px;
@@ -176,17 +196,95 @@ span{
     height: 200%;
 }
 
+
+
+.btnStartGame{
+    position: fixed;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+
+    transition: 0.8s;
+    top: 50%;
+    left: 10cap;
+}
+.btnStartGame:hover{
+    background: silver;
+    filter: drop-shadow(0px 0px 5px red);
+}
+
+
+.exit{
+    background: none;
+    border: 1px solid silver;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+}
+.panel-exit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.infGame{
+    color: #ffffff;
+    background: #000000;
+}
+.result-div{
+    padding: 15px;
+    background: rgb(43, 106, 168);
+    color: #fff;
+    font-size: 30px;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+
+    transition: 0.8s;
+    margin-top: 2000px;
+
+}
+.result-title{
+    padding: 10px;
+}
+.result-div h2 {
+    border-bottom: 1px solid silver;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.exit-result{
+    width: 90%;
+    margin-left: 5%;
+    font-size: 20px;
+    background: none;
+    border: 1px solid silver;
+    color: #fff;
+
+    transition: 0.3s;
+}
+.exit-result:hover{
+    background: #fff;
+    color: #000;
+}
 @media (max-width: 950px)  {
+    .infGame{
+        display: none;
+    }
     body{
         background: #000;
-        padding: 10px;
         display: flex;
         overflow: hidden;
-        overflow-y: scroll;
+        justify-content: start;
+        height: 100vh;
 
     }
     header{
-        display: flex;
+        display: none;
         flex-direction: row;
         justify-content: center;
         position: fixed;
@@ -194,13 +292,13 @@ span{
         width: 100%;
         font-size: 14px;
         height: 90px;
-        padding: 5px;
+        top: 0;
+        left: 0;
+        transition: 0.6s;
     }
 
     .main{
-        margin-top: 240px;
-        overflow-y: scroll;
-        height: 100%;
+        height: 100vh;
         width: 100%;
         padding: 10px;
         display: flex;
@@ -210,4 +308,12 @@ span{
     .title-project{
         padding: 10px;
     }
+
+    .game-main{
+        width: 90%;
+        margin-bottom: 50%;
+    }
 }
+
+
+

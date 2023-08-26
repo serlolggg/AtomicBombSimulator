@@ -56,6 +56,32 @@ const inputPopul = document.querySelector('.popul-input')
 
 const main = document.querySelector('.main')
 
+
+const startGame = document.querySelector('.btnStartGame')
+const btnExit = document.querySelector('.exit')
+const btnExitResult = document.querySelector('.exit-result')
+
+const header = document.querySelector('header')
+const resultDiv = document.querySelector('.result-div')
+startGame.onclick = ()=>{
+    main.style.marginLeft = 0
+
+    header.style.display = 'none'
+    console.log('click')
+}
+
+btnExitResult.onclick = ()=>{
+    resultDiv.style.marginTop = '2000px'
+    btnExitResult.style.display = 'none'
+}
+
+btnExit.onclick = () =>{
+    header.style.display = 'flex'
+    main.style.marginLeft = '4000px'
+}
+const optionBomb = document.querySelector('.option-bomb')
+const optionCity = document.querySelector('.option-city')
+
 class City{
     constructor(nameCity,population){
         this.nameCity = nameCity;
@@ -65,45 +91,96 @@ class City{
 
 
     atomicBomb(){
+        const resultTitle = document.querySelector('.result-title')
 
-        const optionBomb = document.querySelector('.option-bomb')
+
         let onePopulation
         let twoPopulation 
-        if(optionBomb.value == 'bomb1'){
-            console.log('bum1')
-            onePopulation =  Math.round(this.population * 0.73)
-            twoPopulation = this.population - Math.round(this.population * 0.73)
-        }
-        if(optionBomb.value == 'bomb2'){
-            console.log('bum2')
-            onePopulation =  Math.round(this.population * 0.65)
-            twoPopulation = this.population - Math.round(this.population * 0.65)
-        }
-        if(optionBomb.value == 'bomb3'){
-            console.log('bum3')
-            onePopulation =  Math.round(this.population * 0.21)
-            twoPopulation = this.population - Math.round(this.population * 0.21)
-        }
-        if(optionBomb.value == 'bomb4'){
-            console.log('bum4')
-            onePopulation =  Math.round(this.population * 0.11)
-            twoPopulation = this.population - Math.round(this.population * 0.11)
-        }
-        if(optionBomb.value == 'bomb5'){
-            console.log('bum5')
-            onePopulation =  Math.round(this.population * 0.003)
-            twoPopulation = this.population - Math.round(this.population * 0.003)
+        let nameBomb
+
+
+        if(optionCity.value == 'Moskov'){
+            this.population = 13097539
+            this.nameCity = 'Москва'
+            console.log(this.nameCity,this.population)
+            if(optionBomb.value == 'bomb1'){
+                console.log('bum1')
+                nameBomb = '«Малюк»'
+                onePopulation =  Math.round(this.population * 0.73)
+                twoPopulation = this.population - Math.round(this.population * 0.73)
+            }
+            if(optionBomb.value == 'bomb2'){
+                console.log('bum2')
+                nameBomb = '«Товстун»'
+                onePopulation =  Math.round(this.population * 0.65)
+                twoPopulation = this.population - Math.round(this.population * 0.65)
+            }
+            if(optionBomb.value == 'bomb3'){
+                console.log('bum3')
+                nameBomb = '«Mk.18»'
+                onePopulation =  Math.round(this.population * 0.21)
+                twoPopulation = this.population - Math.round(this.population * 0.21)
+            }
+            if(optionBomb.value == 'bomb4'){
+                console.log('bum4')
+                nameBomb = '«B83»'
+                onePopulation =  Math.round(this.population * 0.11)
+                twoPopulation = this.population - Math.round(this.population * 0.11)
+            }
+            if(optionBomb.value == 'bomb5'){
+                console.log('bum5')
+                nameBomb = '«Цар-бомба»'
+                onePopulation =  Math.round(this.population * 0.003)
+                twoPopulation = this.population - Math.round(this.population * 0.003)
+            }
         }
 
-        const html = `<p class="result">
-Ви скинули атомну бомбу на ${this.nameCity}.
-кількість населення до бомби: ${this.population}
-населення після бомби: ${onePopulation}.
-кількість загиблих: ${twoPopulation}
+        if(optionCity.value == 'Berlin'){
+            this.population = 3326002
+            this.nameCity = 'Берлін'
+            console.log(this.nameCity,this.population)
+            if(optionBomb.value == 'bomb1'){
+                console.log('bum1')
+                nameBomb = '«Малюк»'
+                onePopulation =  Math.round(this.population * 0.73)
+                twoPopulation = this.population - Math.round(this.population * 0.73)
+            }
+            if(optionBomb.value == 'bomb2'){
+                console.log('bum2')
+                nameBomb = '«Товстун»'
+                onePopulation =  Math.round(this.population * 0.65)
+                twoPopulation = this.population - Math.round(this.population * 0.65)
+            }
+            if(optionBomb.value == 'bomb3'){
+                console.log('bum3')
+                nameBomb = '«Mk.18»'
+                onePopulation =  Math.round(this.population * 0.21)
+                twoPopulation = this.population - Math.round(this.population * 0.21)
+            }
+            if(optionBomb.value == 'bomb4'){
+                console.log('bum4')
+                nameBomb = '«B83»'
+                onePopulation =  Math.round(this.population * 0.11)
+                twoPopulation = this.population - Math.round(this.population * 0.11)
+            }
+            if(optionBomb.value == 'bomb5'){
+                console.log('bum5')
+                nameBomb = '«Цар-бомба»'
+                onePopulation =  Math.round(this.population * 0.003)
+                twoPopulation = this.population - Math.round(this.population * 0.003)
+            }
+        }
+        
+
+        const html = `<p class="result10">
+<p>Ви скинули ${nameBomb} бомбу на ${this.nameCity}.</p>
+<p>кількість населення до трагедіїї: ${this.population}</p>
+<p>населення після трагедіїї: ${onePopulation}.</p>
+<p>кількість загиблих: ${twoPopulation}</p>
 </p>`
 
 
-        stat.insertAdjacentHTML('beforeend', html)
+        resultTitle.insertAdjacentHTML('beforeend', html)
 
         console.log(`
 Ви скинули атомну бомбу на ${this.nameCity}.
@@ -119,16 +196,17 @@ class City{
 form.onsubmit = function(e){
     const result = document.querySelector('.result')
 
-
-    if(result){
-        result.remove()
-    }
-
     e.preventDefault();
-    console.log(inputCity.value, inputPopul.value)
-    const moscow = new City(inputCity.value, inputPopul.value)
+    if(document.querySelector('.result10')){
+        document.querySelector('.result10').remove()
+    }
+    resultDiv.style.marginTop = '0px'
+    resultDiv.style.zIndex = 100
+    btnExitResult.style.display = 'block'
+    const citi = new City()
+    citi.atomicBomb()
 
-    console.log(moscow.atomicBomb())
+    
 
 }
 
@@ -137,6 +215,6 @@ const reset = document.querySelector('.reset')
 reset.onclick = () =>{
     console.log('click')
 
-    inputCity.value = ''
-    inputPopul.value = ''
+    optionCity.value = 'Moskov'
+    optionBomb.value = 'bomb1'
 }
