@@ -275,6 +275,9 @@ span{
     .infGame{
         display: none;
     }
+    *{
+        overflow: hidden;
+    }
     body{
         background: #000;
         display: flex;
