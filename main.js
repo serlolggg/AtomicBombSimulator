@@ -194,11 +194,12 @@ class City{
 }
 
 form.onsubmit = function(e){
-    const result = document.querySelector('.result')
+    const result = document.querySelector('.result-title')
 
     e.preventDefault();
-    if(document.querySelector('.result10')){
-        document.querySelector('.result10').remove()
+    if(result){
+        result.textContent = ''
+        console.log('remove')
     }
     resultDiv.style.marginTop = '0px'
     resultDiv.style.zIndex = 100
