@@ -71,13 +71,13 @@ startGame.onclick = ()=>{
 }
 
 btnExitResult.onclick = ()=>{
-    resultDiv.style.marginTop = '2000px'
+    resultDiv.style.marginTop = '200vh'
     btnExitResult.style.display = 'none'
 }
 
 btnExit.onclick = () =>{
     header.style.display = 'flex'
-    main.style.marginLeft = '4000px'
+    main.style.marginLeft = '250%'
 }
 const optionBomb = document.querySelector('.option-bomb')
 const optionCity = document.querySelector('.option-city')
@@ -201,7 +201,7 @@ form.onsubmit = function(e){
         result.textContent = ''
         console.log('remove')
     }
-    resultDiv.style.marginTop = '0px'
+    resultDiv.style.marginTop = '0%'
     resultDiv.style.zIndex = 100
     btnExitResult.style.display = 'block'
     const citi = new City()
