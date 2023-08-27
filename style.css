@@ -323,3 +323,26 @@ span{
 
 
 
+@keyframes bombFinish {
+    0%{
+        background: linear-gradient(135deg,#6d1818, #ff0000,#d0ff00);
+        filter: blur(20px) hue-rotate(230deg) contrast(100%);
+    }
+    50%{
+        background: linear-gradient(235deg,#6d1818, #ff0000,#d0ff00);
+        filter: blur(5px) hue-rotate(360deg) contrast(600%);
+    }
+    60%{
+        background: linear-gradient(235deg,#6d1818, #ff0000,#d0ff00);
+        filter: blur(5px) hue-rotate(360deg) contrast(700%) invert();
+    }
+    70%{
+        background: linear-gradient(185deg,#6d1818, #ff0000,#d0ff00);
+        filter: blur(10px) hue-rotate(360deg) contrast(1000%);
+
+    }
+    100%{
+        filter: blur(0px) hue-rotate(0deg) contrast(100%);
+        background: linear-gradient(135deg,rgb(43, 106, 168), rgb(43, 106, 168),rgb(43, 106, 168));
+    }
+}

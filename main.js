@@ -63,6 +63,7 @@ const btnExitResult = document.querySelector('.exit-result')
 
 const header = document.querySelector('header')
 const resultDiv = document.querySelector('.result-div')
+
 startGame.onclick = ()=>{
     main.style.marginLeft = 0
 
@@ -81,6 +82,8 @@ btnExit.onclick = () =>{
 }
 const optionBomb = document.querySelector('.option-bomb')
 const optionCity = document.querySelector('.option-city')
+
+
 
 class City{
     constructor(nameCity,population){
@@ -173,41 +176,49 @@ class City{
         
 
         const html = `<p class="result10">
-<p>Ви скинули ${nameBomb} бомбу на ${this.nameCity}.</p>
-<p>кількість населення до трагедіїї: ${this.population}</p>
-<p>населення після трагедіїї: ${onePopulation}.</p>
-<p>кількість загиблих: ${twoPopulation}</p>
+<p>Ви скинули ${nameBomb} бомбу на ${this.nameCity}. </p>
+<p>кількість населення до трагедіїї: ${this.population} </p>
+<p>населення після трагедіїї: ${onePopulation}. </p>
+<p>кількість загиблих: ${twoPopulation} </p>
 </p>`
-
-
         resultTitle.insertAdjacentHTML('beforeend', html)
-
-        console.log(`
-Ви скинули атомну бомбу на ${this.nameCity}.
-кількість населення до бомби: ${this.population}
-населення після бомби: ${Math.round(this.population * 0.023)}.
-кількість загиблих: ${this.population - Math.round(this.population * 0.023)}`)
-    }
+    }}
 
 
 
-}
+     
+     
 
 form.onsubmit = function(e){
+    e.preventDefault();
+
     const result = document.querySelector('.result-title')
 
-    e.preventDefault();
     if(result){
         result.textContent = ''
         console.log('remove')
     }
+    resultDiv.style.animation = 'bombFinish 4.5s linear'
+    if(resultDiv.style.animation){
+        console.log('re')
+        setTimeout(() => {
+            resultDiv.style.animation = ''
+            console.log('re2')
+
+            
+            const citi = new City();
+
+            citi.atomicBomb()
+        }, 4500);
+    }
+
+
     resultDiv.style.marginTop = '0%'
     resultDiv.style.zIndex = 100
-    btnExitResult.style.display = 'block'
-    const citi = new City()
-    citi.atomicBomb()
 
-    
+
+  
+    btnExitResult.style.display = 'block'
 
 }
 
@@ -219,3 +230,4 @@ reset.onclick = () =>{
     optionCity.value = 'Moskov'
     optionBomb.value = 'bomb1'
 }
+
